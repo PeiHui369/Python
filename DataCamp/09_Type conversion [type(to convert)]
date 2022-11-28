@@ -13,7 +13,7 @@ More specifically, you'll need str(), to convert a value into a string. str(savi
 Similar functions such as int(), float() and bool() will help you convert Python values into any type.
 
 @ str(), int(), float(), bool()
-
+@ str * n --> can multiply str to repeat
 ---
 Instruction
 
