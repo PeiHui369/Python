@@ -1,13 +1,26 @@
-Importing Python modules
-
-Modules (sometimes called packages or libraries) help group together related sets of tools in Python. 
-In this exercise, we'll examine two modules that are frequently used by Data Scientists:
-
-statsmodels: used in machine learning; usually aliased as sm
-seaborn: a visualization library; usually aliased as sns
-Note that each module has a standard alias, which allows you to access the tools inside of the module without typing as many characters. 
-For example, aliasing lets us shorten seaborn.scatterplot() to sns.scatterplot().
-
+#1
 Modules/ Packages/ Libraries: Grp tgt related sets of tools
 @ statsmodels, sm: machine learning
 @ seaborn, sns: visualization library
+
+>>
+import x
+import x as alias
+
+#2
+Case sensitive
+- modules in lowercase
+
+#3
+varName = varValue
+strName = "str" or 'str'
+
+#4 create a DataFrame from a CSV (comma-separated value) file
+pd.read_csv('csvFileName')
+-  represents spreadsheet-like data (something with rows and columns)
+
+#5 
+lookup_plate(variable, keyword = 'arg')
+- accepts one positional argument: A string representing a license plate.
+
+#6
