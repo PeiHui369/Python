@@ -11,6 +11,10 @@ We'll be exploring the weights of various puppies from the DataFrame puppies. ma
 # Change the range to start at 5 and end at 35
 plt.hist(puppies.weight,
         range=(5, 35))
+#or
+# Change the number of bins to 50
+plt.hist(puppies.weight,
+        bins = 50)
 
 # Add labels
 plt.xlabel('Puppy Weight (lbs)')
