@@ -1,0 +1,49 @@
+More column selection mistakes
+Another junior detective is examining a DataFrame of Missing Puppy Reports. He's made some mistakes that cause the code to fail.
+
+The pandas module has been loaded under the alias pd, and the DataFrame is called mpr.
+
+===
+
+# Use info() to inspect mpr
+print(mpr.info())
+
+# The following code contains one or more errors
+# Correct the mistakes in the code so that it runs without errors
+
+# Select column "Dog Name" from mpr
+//ori: name = mpr.Dog Name
+name = mpr["Dog Name"]
+
+# Select column "Missing?" from mpr
+//ori: is_missing = mpr.Missing?
+is_missing = mpr["Missing?"]
+
+# Display the columns
+print(name)
+print(is_missing)
+
+
+<script.py> output:
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 4 entries, 0 to 3
+    Data columns (total 4 columns):
+     #   Column      Non-Null Count  Dtype 
+    ---  ------      --------------  ----- 
+     0   Dog Name    4 non-null      object
+     1   Owner Name  4 non-null      object
+     2   Dog Breed   4 non-null      object
+     3   Missing?    4 non-null      object
+    dtypes: object(4)
+    memory usage: 256.0+ bytes
+    None
+    0      Bayes
+    1    Sigmoid
+    2     Sparky
+    3    Theorem
+    Name: Dog Name, dtype: object
+    0    Still Missing
+    1    Still Missing
+    2            Found
+    3            Found
+    Name: Missing?, dtype: object
