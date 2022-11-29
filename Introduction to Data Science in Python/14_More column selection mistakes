@@ -47,3 +47,12 @@ print(is_missing)
     2            Found
     3            Found
     Name: Missing?, dtype: object
+    
+    ===
+Why did this code generate an error?
+//
+name = mpr.Dog Name
+//
+
+>> If a column name contains a space, then it needs to be in brackets and string notation.
+
