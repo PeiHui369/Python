@@ -1,0 +1,17 @@
+#Functions
+> Functions in code
+pd.read_csv() : turns a csv file into a table in Python
+plt.plot() : turns data into a line plot
+plt.show() : displays plot in a new window
+
+> Anatomy
+module.funcName(df.x, df.y, argName = 'arg')
+
+#Pandas
+- Loading
+df = pd.read_csv('csvFileName')
+- Display
+print(df)
+- Inspecting
+i. df.head() #First 5 rows
+ii. df.info() #Number of rows, Column Names, Data Types
