@@ -1,0 +1,38 @@
+Correcting column selection errors
+A junior detective tried to access the location columns of credit_records, but he made some mistakes. 
+Help correct his code so that we can search for suspicious purchases.
+
+In all exercises going forward, pandas will be imported as pd. 
+The DataFrame credit_records has already been imported.
+
+===
+
+# One or more lines of code contain errors.
+# Fix the errors so that the code runs.
+
+# Select the location column in credit_records
+//ori: location = credit_records[location]
+location = credit_records['location']
+
+# Select the item column in credit_records
+//ori: items = credit_records."item"
+items = credit_records.item
+
+# Display results
+print(location)
+
+
+
+<script.py> output:
+    0       Groceries R Us
+    1      Petroleum Plaza
+    2       Groceries R Us
+    3       Groceries R Us
+    4        Clothing Club
+                ...       
+    99       Clothing Club
+    100      Clothing Club
+    101      Clothing Club
+    102        Burger Mart
+    103     Groceries R Us
+    Name: location, Length: 104, dtype: object
