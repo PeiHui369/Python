@@ -1,2 +1,12 @@
-#Basic plots with Matplotlib
+# Basic plots with Matplotlib
+> Import
+import matplotlib.pyplot as plt
+
+> Line Plot
+plt.plot(df.x_data, df.y_data)
+> Scatter Plot: clearly see data points
+plt.scatter(df.x_data, df.y_data)
+
+> Display
+plt.show()
 
