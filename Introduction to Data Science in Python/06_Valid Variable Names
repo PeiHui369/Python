@@ -1,0 +1,8 @@
+Valid variable names
+
+Which of the following is not a valid variable name? 3dogs #Cannot begin with numbers
+
+- Valid
+my_dog_bayes
+BAYES42
+this_is_a_very_long_variable_name_42
