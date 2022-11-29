@@ -15,3 +15,43 @@ print(df)
 - Inspecting
 i. df.head() #First 5 rows
 ii. df.info() #Number of rows, Column Names, Data Types
+
+# Selecting Columns
+- contains spaces, special characters: var = tableName ['columnName']
+- contains letters, number, underscore: var = tableName.columnName
+
+# Selecting Rows with Logic
+- Types: >, >=, <, <=, !=
+dataframeName.column > value #Print out the value in the specific column is true/false in 1 column
+dataframeName[dataframeName.column > value] #Print out rows with column which is true conditional statement
+dataframeName[dataframeName.column == ""] ##Print out rows with column which has the stated value
+- Summary: DataFrameName[Logical Statement]
+
+------------------------------------------------------------------------------------------
+#1
+Modules/ Packages/ Libraries: Grp tgt related sets of tools
+@ statsmodels, sm: machine learning
+@ seaborn, sns: visualization library
+
+>>
+import x
+import x as alias
+
+#2
+Case sensitive
+- modules in lowercase
+
+#3
+varName = varValue
+strName = "str" or 'str'
+
+#4 create a DataFrame from a CSV (comma-separated value) file
+pd.read_csv('csvFileName')
+-  represents spreadsheet-like data (something with rows and columns)
+
+#5 
+lookup_plate(variable, keyword = 'arg')
+- accepts one positional argument: A string representing a license plate.
+
+#6
+
