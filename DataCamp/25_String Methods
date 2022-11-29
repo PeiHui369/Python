@@ -18,7 +18,7 @@ print(place)
 print(place_up)
 
 # Print out the number of o's in place
-place.count("o")
+print(place.count("o"))
 
 >>
 poolhouse
