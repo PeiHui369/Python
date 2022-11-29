@@ -1,0 +1,32 @@
+Two methods for selecting columns
+Once again, we've loaded the credit card records of our four suspects into a DataFrame called credit_records. 
+Let's examine the items that they've purchased.
+
+The pandas module has been imported under the alias pd. The DataFrame credit_records has already been imported.
+
+===
+
+# Select the column item from credit_records
+
+# Use brackets and string notation
+items = credit_records['item']
+#or
+# Use dot notation
+items = credit_records.item
+
+# Display the results
+print(items)
+
+<script.py> output:
+    0         broccoli
+    1      fizzy drink
+    2         broccoli
+    3         broccoli
+    4            shirt
+              ...     
+    99           shirt
+    100          pants
+    101          dress
+    102         burger
+    103      cucumbers
+    Name: item, Length: 104, dtype: object
