@@ -58,6 +58,25 @@ plt.title("Plot title", fontsize = 20)
 - change font color
 plt.legend(color="green")
 
+# Making a histogram
+- Visualizes the distribution of values in a dataset
+- tells us how many pieces of data fall into each of those bin
+- default = 10 bins
+
+> To create
+plt.hist(dataset)
+
+> Changing bins: number of points
+plt.hist(dataset, bins = n)
+
+> Changing range: to set min & max value --> zoom in
+plt.hist(dataset, range = (xmin, xmax))
+xmin: start at; xmax: end at
+
+> Normalizing: each bar represent a proportion of dataset
+plt.hist(dataset, density = True)
+- Normalize your histogram so that the sum of the bins adds to 1. #True=1
+
 ------------------------------------------------------------------------------------------
 #1
 Modules/ Packages/ Libraries: Grp tgt related sets of tools
