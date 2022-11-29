@@ -1,0 +1,127 @@
+<LIST>
+> Delete element
+del()
+
+> Copy
+newList = oriList[:]
+- To avoid changing newList element will affect oriList as if (newList = oriList) will cause both point to the same list
+
+> Length
+len(listName)
+
+> Maximum
+max(listName)
+
+> index
+listName.index("item")
+
+> No. of times occur
+listName.count("item")
+
+> To add item to the end
+listName.append("item")
+
+<FUNCTION>
+> To know
+i. help(functionName)
+ii. ?functionName
+
+> To call
+i. functionName(arg)
+ii. output = function_name(input)
+
+> To sort
+sorted(iterable, /, *, key=None, reverse=False)
+
+<String>
+> Capitalize
+str.capitalize()
+str.replace("ori","new")
+
+<Methods>
+Everything = Object
+
+<List Methods>
+.index()
+.count()
+.append()
+.remove() //first match
+.reverse()
+
+<Notes>
+> To call function
+func(var)
+
+> To use methods
+var.method()
+
+
+###
+PACKAGES
+
+> Import
+import packageName
+- when use need packageName.specific
+
+> Use
+packageName.specific
+
+> Import specific
+from packageName import specific
+- can direct use specific below
+
+> Import with local name
+from packageName import specific as localName
+
+<NumPy>
+import numpy as np
+
+> To create numpy array
+newName = np.array(arrayName)
+
+> To change all value
+newNpArray = oriNpArray * 2
+
+> To do calculation involving 2 np
+name = np1/ np2
+- no need to specify name is np
+
+> boolean array
+conditionArrayName = arrayToCompare with condition(> < etc.)
+print(conditionArrayName) >> True/False
+print(arrayToCompare[conditionArrayName]) >> Get which true
+
+> if different types
+True --> 1
+False --> 0
+
+> Subsetting
+i. npArrayName[indexNo]
+ii. npArrayName[startIndexInclusive:endIndexExclusive]
+
+<2D NumPy Array>
+> type 
+type(name)
+
+> shape
+name.shape
+
+> Subsetting
+npArrayName[row,column]
+- To select all [:,:]
+- Rmb index = number - 1
+
+> Arithmetic
+- Create another np array
+- Multiply oriArray with newArray
+
+> Statistics
+np.mean(arrayName[])
+np.median(arrayName[])
+np.std(arrayName[]) #Standard deviation
+np.corrcoef(arrayName[], arrayName[]) #Correlation between 1st & 2nd
+
+> Index
+array1[array2=='value']
+
+
