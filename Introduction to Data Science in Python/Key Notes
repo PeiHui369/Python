@@ -27,6 +27,37 @@ dataframeName[dataframeName.column > value] #Print out rows with column which is
 dataframeName[dataframeName.column == ""] ##Print out rows with column which has the stated value
 - Summary: DataFrameName[Logical Statement]
 
+# Creating lineport
+- Uses a coordinate grid to plot a series of points and then connects each point using a line
+> Import
+from matplotlib import pyplot as plt
+> To plot
+plt.plot (x_values, y_values)
+x_values: dataframeName.rows
+y_values: dataframeName.columns
+> Display
+plt.show() 
+multiple lines auto diff colour
+
+# Adding Text to Plot
+> Label
+i. plt.xlabel("what we want it to read"）
+ii. plt.ylabel("what we want it to read"）
+iii. plt.title("the title")
+
+> Legend: multiple lines
+plt.plot(name.x_values, name.y_values, label = "name")
+plt.legend()
+
+> Arbitrary text
+plt.text(x_coordinate, y_coordinate, "TextMessage")
+
+> Modifying text
+- change font size
+plt.title("Plot title", fontsize = 20)
+- change font color
+plt.legend(color="green")
+
 ------------------------------------------------------------------------------------------
 #1
 Modules/ Packages/ Libraries: Grp tgt related sets of tools
