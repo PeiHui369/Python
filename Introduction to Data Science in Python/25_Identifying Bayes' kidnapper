@@ -1,0 +1,34 @@
+Identifying Bayes' kidnapper
+We've narrowed the possible kidnappers down to two suspects:
+
+Fred Frequentist (suspect1)
+Gertrude Cox (suspect2)
+The kidnapper left a long ransom note containing several unusual phrases. 
+Help DataCamp by using a line plot to compare the frequency of letters in the ransom note to samples from the two main suspects.
+
+Three DataFrames have been loaded:
+
+ransom contains the letter frequencies for the ransom note.
+suspect1 contains the letter frequencies for the sample from Fred Frequentist.
+suspect2 contains the letter frequencies for the sample from Gertrude Cox.
+Each DataFrame contain two columns letter and frequency.
+
+===
+
+# Plot each line
+plt.plot(ransom.letter, ransom.frequency,
+         label='Ransom', linestyle=':', color='gray')
+plt.plot(suspect1.letter, suspect1.frequency, label='Fred Frequentist')
+plt.plot(suspect2.letter, suspect2.frequency, label='Gertrude Cox')
+
+# Add x- and y-labels
+plt.xlabel("Letter")
+plt.ylabel("Frequency")
+
+# Add a legend
+plt.legend()
+
+# Display plot
+plt.show()
+
+>>Graph
