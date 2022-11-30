@@ -86,6 +86,8 @@ dictName['key'] = subDictName
 row : observations
 column : variable
 
+> import pandas as pd
+
 > Build dataframe from dictionary
 dict = {
         "key1" : ["value1", "value2"],
@@ -93,10 +95,55 @@ dict = {
         ... }
 - key: column label; value: data (column by column)
 import pandas as pd
-var = pd.DataFrame(dict)
+dfName = pd.DataFrame(dict)
 
 > Specify index
-var.index["labelRow1", "labelRow2"]
+dfName.index["labelRow1", "labelRow2"]
+or
+dfName.index = listName
+
+> Import the fileName.csv data
+dfName = pd.read_csv("fileName.csv")
 
 > DataFrame from CSV file
-var = pd.read_psv("path/to/csvFileName.csv", index_col = 0)
+dfName = pd.read_psv("path/to/csvFileName.csv", index_col = 0)
+- index_col specify which column used as row index
+
+>>> Select data
+>> Square Bracket
+> Column Access []
+dfName[["key"]]
+dfName[["key1","key2"]]
+- type: pandas.core.frame.DataFrame
+
+/*
+dfName["key"]
+
+> Row Access []
+- slice
+dfName [startIndexInclusive : endIndexExclusive]
+
+>> loc (label-based)
+> Row Access loc
+dfName.loc["index"]
+- get 1 column column_labels & 1 column value for the row
+dfName.loc[["index"]]
+- get DataFrame
+dfName.loc[["index1","index2]]
+- get multiple rows DataFrame
+
+> Row & Column loc
+dfName.loc[["index"],["column_label"]]
+or
+dfName.loc[:,["column_label"]] #all rows, specific column
+
+>> iloc (integer position-based)
+> Row Access
+dfName.iloc[[rowIndex]]
+dfName.iloc[[rowIndex1, rowIndex2]]
+
+> Row & Column iloc
+dfName.iloc[[rowIndex],[columnIndex]]
+dfName.iloc[:,[columnIndex]] #all rows, specific column
+
+
