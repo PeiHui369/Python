@@ -51,3 +51,52 @@ b = [....] + d
 > Draw gridline on plot
 plt.grid(True)
 
+# DICTIONARIES
+dictName = {"key":value, "key2":value2}
+
+> Get index of item from list
+var = listName.index("item")
+
+> Print all keys
+dictName.keys()
+
+> Print value
+dictName['key']
+
+> Add key value pairs
+dictName['key'] = value
+
+> Check if key exist
+'key' in dictName
+
+- if same key, value updated
+
+> Remove key value pairs
+del(dictName['key'])
+
+>> Dictionary of Dictionaries { ' ': {}, ' ' : {} }
+> To access
+dictName['key']['key in subDict']
+
+> To add subdictionary
+subDictName = { }
+dictName['key'] = subDictName
+
+#Pandas
+row : observations
+column : variable
+
+> Build dataframe from dictionary
+dict = {
+        "key1" : ["value1", "value2"],
+        "key2" : ["Value1", "value2"],
+        ... }
+- key: column label; value: data (column by column)
+import pandas as pd
+var = pd.DataFrame(dict)
+
+> Specify index
+var.index["labelRow1", "labelRow2"]
+
+> DataFrame from CSV file
+var = pd.read_psv("path/to/csvFileName.csv", index_col = 0)
