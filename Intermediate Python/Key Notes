@@ -22,6 +22,30 @@ plt.hist(dataset)
 
 > Changing bins
 plt.hist(dataset, bins)
+- Too few: oversimplify reality (X details)
+- Too many: overcomplicate reality (X bigger picture)
 
+> Clean up
+plt.clf()
+- clear the current figure
+
+> Full
+plt.hist(x, bins=None, range=None, density=False, weights=None, cumulative=False, bottom=None, histtype='bar', align='mid', orientation='vertical', rwidth=None, log=False, color=None, label=None, stacked=False, *, data=None, **kwargs)
 - Argument refer help(plt.hist)
+
+# Customization
+> Label axes
+plt.xlabel()
+plt.ylabel
+
+> Title
+plt.title()
+
+> y-axis start with
+plt.yticks([0,2,4,6,8,10],['0','2B','4B','6B','8B','10B']) #[1] scale, [2] scale label
+
+> Add more data
+a = [....] + c
+b = [....] + d
+
 
