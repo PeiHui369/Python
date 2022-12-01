@@ -177,6 +177,23 @@ else:
 indentation
 - can surround cond with ()
 
+# Filtering pandas data frame
+- Comparison Operator
+dfName[dfName["column_label"] condition]
+
+- Boolean Operator
+dfName[np.logical_and/or/not(cond1, cond2)]
+
+- Extract as series
+dr = x["column_label"]
+- use dr to subset cars: sel
+sel = x[dr]
+
+-
+cpc = cars['cars_per_cap'] #Select the column
+between = np.logical_and(cpc > 10, cpc < 80) #Compare the column values with the condition --> True/False
+medium = cars[between] #Into DataFrame
+
 
 
 
