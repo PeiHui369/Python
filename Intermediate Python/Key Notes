@@ -118,6 +118,8 @@ dfName[["key1","key2"]]
 
 /*
 dfName["key"]
+dfName[indexNo]: select rows
+*/
 
 > Row Access []
 - slice
@@ -145,5 +147,38 @@ dfName.iloc[[rowIndex1, rowIndex2]]
 > Row & Column iloc
 dfName.iloc[[rowIndex],[columnIndex]]
 dfName.iloc[:,[columnIndex]] #all rows, specific column
+
+- Print value/ as Series: []
+- Print dataframe: [[]]
+- [[rows],[columns]]
+
+# Comparison Operators: tell how value relate, result in boolean
+
+# Boolean Operators
+True and True >> True
+
+False or False >> False
+
+not False >>True
+not True >>False
+
+np.logical_and(cond1, cond2)
+>> True/ False
+npArrayName [np.logical_and(cond1,cond2)]
+>> Values True
+
+
+# if, elif, else
+if:
+indentation
+elif:
+indentation
+else:
+indentation
+- can surround cond with ()
+
+
+
+
 
 
