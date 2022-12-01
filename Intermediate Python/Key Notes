@@ -194,7 +194,65 @@ cpc = cars['cars_per_cap'] #Select the column
 between = np.logical_and(cpc > 10, cpc < 80) #Compare the column values with the condition --> True/False
 medium = cars[between] #Into DataFrame
 
+# WHILE loop
+while condition:
+        expression
+        
 
+# FOR loop
+
+for var in seq:
+        expression
+- for each var in seq, execute expression
+
+for index,height in enumerate(fam):
+        print("index " + str(index) + "： " + str(height))
+        
+> Loop over string
+for c in "family":
+        print (c.capitalize())
+        
+> Loop over list of lists
+for item in list:
+        print(item[0] + item[1])
+        
+#LOOP Data Structures 
+<Dictionary>
+for k, v in dictName.items():
+        print( k + " -- " + str(v))
+
+<NumPy Array>
+for x in numpyArrayName:
+        print(x)
+
+<2D Numpy Array>
+combineNpArrayName = np.array([npArr1, npArr2])
+for x in np.nditer(combineNpArrayName):
+        print x
+        
+<CSV File>
+- Iterrows
+for lab, row in CSVfileName.iterrows():
+        print(lab)
+        print(row)
+
+- Selective Print
+for lab, row in CSVfileName.iterrows():
+        print(lab + ": " + row["column_labels"])
+
+
+-     cars.loc[lab, "COUNTRY"] = row["country"].upper() //add a column(label: COUNTRY), the data is get from column(label: country) and make all uppercase
+
+> Add Column
+Function: brics["name_length"] = brics["country"].apply(len)
+Method: cars["COUNTRY"] = cars["country"].apply(str.upper)
+
+# RANDOM FLOAT
+@seed(): sets the random seed, so that your results are reproducible between simulations. 
+As an argument, it takes an integer of your choosing. 
+If you call the function, no output will be generated.
+
+@rand(): if you don't specify any arguments, it generates a random float between zero and one.
 
 
 
