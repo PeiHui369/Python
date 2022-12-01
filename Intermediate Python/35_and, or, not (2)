@@ -1,0 +1,29 @@
+and, or, not (2)
+To see if you completely understood the boolean operators, have a look at the following piece of Python code:
+//
+x = 8
+y = 9
+not(not(x < 3) and not(y > 14 or y > 10))
+//
+What will the result be if you execute these three commands in the IPython Shell?
+
+NB: Notice that not has a higher priority than and and or, it is executed first.
+
+===
+
+x = 8
+x < 3 >>False
+not(x<3) >>True
+
+y = 9
+y > 14       >>False
+y > 10       >>False
+y>14 or y>10 >>False
+not(y>14 or y>10) >>True
+
+not(x<3) and not(y>14 or y>10) 
+True and True  >>True
+
+not(not(x<3) and not(y>14 or y>10)) 
+>> False
+
