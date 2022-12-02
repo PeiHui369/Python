@@ -254,6 +254,53 @@ If you call the function, no output will be generated.
 
 @rand(): if you don't specify any arguments, it generates a random float between zero and one.
 
+> Set a seed & print
+np.random.seed(123)
+print(np.random.rand())
+
+> Between Range
+np.random.randint(minNumInclusive, maxNumExclusive)
+
+> Initialize a list
+listName = [0]
+
+> To loop 100 times
+for x in range(100)
+
+> To add item into list
+listName.append(item)
+
+> Make sure a num nvr go below N
+x = max(N, x - 1)
+
+> Visualize
+import matplotlib.pyplot as plt
+plt.plot(x, y) #or plt.plot(listName)
+plt.show()
+
+> Stimulate a number of times
+for i in range(10) : #Stimulate 10 times
+    random_walk = [0]
+    for x in range(100) : #Loop how many times
+
+> Transpose (65)
+npa_t = np.transpose(npa)
+Transposing the 2D NumPy array was crucial;
+
+> Calculate the odds (estimated chance)
+np.mean(ends >= 30) gives you the fraction of simulations that ended greater than or equal to step 30.
+
+> Convert to np.array before np.transpose
+# Create and plot np_aw_t
+np_aw_t = np.transpose(np.array(listName))
+# Select last row from np_aw_t: ends
+ends = np_aw_t[-1,:]
+
+<ASK>
+- Nested for loop for range
+- Transpose
+- Calc odds (estimated chance)
+
 
 
 
