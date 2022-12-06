@@ -1,0 +1,131 @@
+Fill in missing values and sum values with pivot tables
+The .pivot_table() method has several useful arguments, including fill_value and margins.
+
+fill_value replaces missing values with a real value (known as imputation). What to replace missing values with is a topic big enough to have its own course (Dealing with Missing Data in Python), but the simplest thing to do is to substitute a dummy value.
+margins is a shortcut for when you pivoted by two variables, but also wanted to pivot by each of those variables separately: it gives the row and column totals of the pivot table contents.
+In this exercise, you'll practice using these arguments to up your pivot table skills, which will help you crunch numbers more efficiently!
+
+sales is available and pandas is imported as pd
+
+---
+Print the mean weekly_sales by department and type, filling in any missing values with 0.
+
+===
+# Print mean weekly_sales by department and type; fill missing values with 0
+print(sales.pivot_table(index='department',columns='type',values='weekly_sales',fill_value=0))
+
+>>
+
+<script.py> output:
+                     weekly_sales
+    department type              
+    1          A        30961.725
+               B        44050.627
+    2          A        67600.159
+               B       112958.527
+    3          A        17160.003
+    ...                       ...
+    97         A        28471.267
+               B         5828.873
+    98         A        12875.423
+               B          217.428
+    99         A          379.124
+    
+    [157 rows x 1 columns]
+
+<script.py> output:
+    department           1                     2                      3   ...         97                   98                99
+    type                  A          B          A           B          A  ...          A         B          A        B        A
+    weekly_sales  30961.725  44050.627  67600.159  112958.527  17160.003  ...  28471.267  5828.873  12875.423  217.428  379.124
+    
+    [1 rows x 157 columns]
+Traceback (most recent call last):
+  File "script.py", line 72, in exceptionCatcher
+    raise exception
+  File "script.py", line 3361, in run_ast_nodes
+    if (await self.run_code(code, result,  async_=asy)):
+  File "script.py", line 3458, in run_code
+    self.showtraceback(running_compiled_code=True)
+  File "script.py", line 2066, in showtraceback
+    self._showtraceback(etype, value, stb)
+  File "script.py", line 72, in exceptionCatcher
+    raise exception
+  File "script.py", line 3441, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "script.py", line 2, in <module>
+    print(sales.pivot_table(values="weekly_sales", columns=["department"], index="department", fill_value = 0))
+  File "script.py", line 7951, in pivot_table
+    return pivot_table(
+  File "script.py", line 95, in pivot_table
+    table = __internal_pivot_table(
+  File "script.py", line 164, in __internal_pivot_table
+    grouped = data.groupby(keys, observed=observed, sort=sort)
+  File "script.py", line 7631, in groupby
+    return DataFrameGroupBy(
+  File "script.py", line 889, in __init__
+    grouper, exclusions, obj = get_grouper(
+  File "script.py", line 857, in get_grouper
+    raise ValueError(f"Grouper for '{name}' not 1-dimensional")
+ValueError: Grouper for 'department' not 1-dimensional
+
+<script.py> output:
+    type                 A           B
+    department                        
+    1            30961.725   44050.627
+    2            67600.159  112958.527
+    3            17160.003   30580.655
+    4            44285.399   51219.654
+    5            34821.011   63236.875
+    ...                ...         ...
+    95          123933.787   77082.102
+    96           21367.043    9528.538
+    97           28471.267    5828.873
+    98           12875.423     217.428
+    99             379.124       0.000
+    
+    [80 rows x 2 columns]
+
+<script.py> output:
+    type                A           B        All
+    department                                  
+    1           30961.725   44050.627  32052.467
+    2           67600.159  112958.527  71380.023
+    3           17160.003   30580.655  18278.391
+    4           44285.399   51219.654  44863.254
+    5           34821.011   63236.875  37189.000
+    ...               ...         ...        ...
+    96          21367.043    9528.538  20337.608
+    97          28471.267    5828.873  26584.401
+    98          12875.423     217.428  11820.590
+    99            379.124       0.000    379.124
+    All         23674.667   25696.678  23843.950
+    
+    [81 rows x 3 columns]
+# 
+
+print(sales.pivot_table(index='department',columns='type',values='weekly_sales',fill_value=0))
+
+type                 A           B
+department                        
+1            30961.725   44050.627
+2            67600.159  112958.527
+3            17160.003   30580.655
+4            44285.399   51219.654
+5            34821.011   63236.875
+...                ...         ...
+95          123933.787   77082.102
+96           21367.043    9528.538
+97           28471.267    5828.873
+98           12875.423     217.428
+99             379.124       0.000
+
+[80 rows x 2 columns]
+
+---
+Print the mean weekly_sales by department and type, filling in any missing values with 0 and summing all rows and columns.
+
+===
+# Print the mean weekly_sales by department and type; fill missing values with 0s; sum all rows and cols
+print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))
+
+>>
