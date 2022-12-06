@@ -1,0 +1,59 @@
+
+
+<Grouped Summary Statistics>
+dfName.groupby("var")["Column_labels"].mean()
+dfName.groupby("var")["Column_labels"].agg([func1, func2])
+dfName.groupby(["var1", "var2"])["Column_labels"].mean()
+dfName.groupby(["var1", "var2"])[["Column_labels1", "Column_labels2"]].mean()
+
+<Pivot Tables>
+dfName.pivot_table (values= "", index= "", aggfunc = [])
+- value: column want to summarize
+- index: column want to groupby
+
+dfName.pivot_table (values= "var1", index= "", columns= "var2")
+dfName.pivot_table (values= "var1", index= "", columns= "var2", fill_value = 0, margins = True) //0 replaces NaN //last row & last column mean
+
+<Explicit Indexes>
+dfName.columns : Index object of column names
+dfName.index: Index object of rows numbers
+
+dfvar = dfName.set_index("column_label") 
+- index values left-aligned
+- column be the 1st column that act as index
+- index values don't need to be unique
+
+dfvar.reset_index()
+- undo set index
+
+dfvar.reset_index(drop=True)
+- discard index (remove 1st column)
+
+df_var.loc[["value1", "value2"]]
+- same as : dfName[dfName["column_label"].isin(["value1", "value2"]) 
+
+df_var.loc["value"]
+- subsetting on duplicated index values
+
+df_var = dfName.set_ndex(["column_label1", "column_label2"])
+- include multiple columns in index (Multi-level indexes/ Hierachical indexes)
+
+df_var.loc[["value1_columnLabel1", "value2_columnLabel1"]]
+- subset outer level with a list
+
+df_var.loc[[("value1_columnLabel1", "value1_columnLabel2"), ("value2_columnLabel1", "value2_columnLabel2")]]
+- subset inner levels with a list of tuples
+
+df_var.sort_index()
+- sorting by index values
+
+df_var.sort_index (level=["indexColumn2", "indexColumn1"], ascending=[True,False])
+
+
+
+
+
+
+
+
+- When to pass as list ([])
