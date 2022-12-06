@@ -27,7 +27,8 @@ dfvar.reset_index()
 - undo set index
 
 dfvar.reset_index(drop=True)
-- discard index (remove 1st column)
+- discard index (remove 1st column), dropping content
+- drop = False; keeping content
 
 df_var.loc[["value1", "value2"]]
 - same as : dfName[dfName["column_label"].isin(["value1", "value2"]) 
@@ -48,6 +49,32 @@ df_var.sort_index()
 - sorting by index values
 
 df_var.sort_index (level=["indexColumn2", "indexColumn1"], ascending=[True,False])
+
+<Slicing and subsetting with .loc and .iloc>
+
+df_var = dfName.set_index(["index1", "index2"]).sort_index()
+- sort index before slice
+
+df_var.loc["indexValueStartInclusive" : "indexValueEndInclusive" ]
+listName[ startIndexInclusive : endIndexExclusive ]
+- Slicing
+
+df_var.loc[ ("outerIndexValue", "innerIndexValue") : ("outerIndexValueEnd", "innerIndexValueEnd")]
+- Slicing inner index levels
+
+df_var.loc[:, "columnLabelStartInclusive" : "columnLabelEndInclusive" ]
+- Slicing columns (keeping all rows)
+
+df_var.loc[("outerIndexValue", "innerIndexValue") : ("outerIndexValueEnd", "innerIndexValueEnd"), "columnLabelStartInclusive" : "columnLabelEndInclusive"]
+- Slicing twice
+
+dfName = dfName.set_index("column_label").sort_index()
+
+dfName.iloc[startIndex, endIndex]
+dfName.iloc[startRow:endRow , startColumn:endColumn ]
+- get columns 3 to 4 = [:, 2:4]
+
+
 
 
 
