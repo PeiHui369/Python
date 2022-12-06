@@ -1,0 +1,112 @@
+Subsetting with .loc[]
+The killer feature for indexes is .loc[]: a subsetting method that accepts index values. 
+When you pass it a single argument, it will take a subset of rows.
+
+The code for subsetting using .loc[] can be easier to read than standard square bracket subsetting, which can make your code less burdensome to maintain.
+
+pandas is loaded as pd. temperatures and temperatures_ind are available; the latter is indexed by city.
+
+---
+Create a list called cities that contains "Moscow" and "Saint Petersburg".
+Use [] subsetting to filter temperatures for rows where the city column takes a value in the cities list.
+Use .loc[] subsetting to filter temperatures_ind for rows where the city is in the cities list.
+
+===
+# Make a list of cities to subset on
+cities = ["Moscow", "Saint Petersburg"]
+
+# Subset temperatures using square brackets
+print(temperatures[temperatures["city"].isin(cities)])
+
+# Subset temperatures_ind using .loc[]
+print(temperatures_ind.loc[cities])
+
+>>
+<script.py> output:
+                date              city country  avg_temp_c
+    10725 2000-01-01            Moscow  Russia      -7.313
+    10726 2000-02-01            Moscow  Russia      -3.551
+    10727 2000-03-01            Moscow  Russia      -1.661
+    10728 2000-04-01            Moscow  Russia      10.096
+    10729 2000-05-01            Moscow  Russia      10.357
+    ...          ...               ...     ...         ...
+    13360 2013-05-01  Saint Petersburg  Russia      12.355
+    13361 2013-06-01  Saint Petersburg  Russia      17.185
+    13362 2013-07-01  Saint Petersburg  Russia      17.234
+    13363 2013-08-01  Saint Petersburg  Russia      17.153
+    13364 2013-09-01  Saint Petersburg  Russia         NaN
+    
+    [330 rows x 4 columns]
+
+<script.py> output:
+                date              city country  avg_temp_c
+    10725 2000-01-01            Moscow  Russia      -7.313
+    10726 2000-02-01            Moscow  Russia      -3.551
+    10727 2000-03-01            Moscow  Russia      -1.661
+    10728 2000-04-01            Moscow  Russia      10.096
+    10729 2000-05-01            Moscow  Russia      10.357
+    ...          ...               ...     ...         ...
+    13360 2013-05-01  Saint Petersburg  Russia      12.355
+    13361 2013-06-01  Saint Petersburg  Russia      17.185
+    13362 2013-07-01  Saint Petersburg  Russia      17.234
+    13363 2013-08-01  Saint Petersburg  Russia      17.153
+    13364 2013-09-01  Saint Petersburg  Russia         NaN
+    
+    [330 rows x 4 columns]
+Traceback (most recent call last):
+  File "script.py", line 72, in exceptionCatcher
+    raise exception
+  File "script.py", line 3361, in run_ast_nodes
+    if (await self.run_code(code, result,  async_=asy)):
+  File "script.py", line 3458, in run_code
+    self.showtraceback(running_compiled_code=True)
+  File "script.py", line 2066, in showtraceback
+    self._showtraceback(etype, value, stb)
+  File "script.py", line 72, in exceptionCatcher
+    raise exception
+  File "script.py", line 3441, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "script.py", line 8, in <module>
+    print(temperatures.loc[cities])
+  File "script.py", line 931, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "script.py", line 1153, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+  File "script.py", line 1093, in _getitem_iterable
+    keyarr, indexer = self._get_listlike_indexer(key, axis)
+  File "script.py", line 1314, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis)
+  File "script.py", line 1374, in _validate_read_indexer
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['Moscow', 'Saint Petersburg'], dtype='object')] are in the [index]"
+
+<script.py> output:
+                date              city country  avg_temp_c
+    10725 2000-01-01            Moscow  Russia      -7.313
+    10726 2000-02-01            Moscow  Russia      -3.551
+    10727 2000-03-01            Moscow  Russia      -1.661
+    10728 2000-04-01            Moscow  Russia      10.096
+    10729 2000-05-01            Moscow  Russia      10.357
+    ...          ...               ...     ...         ...
+    13360 2013-05-01  Saint Petersburg  Russia      12.355
+    13361 2013-06-01  Saint Petersburg  Russia      17.185
+    13362 2013-07-01  Saint Petersburg  Russia      17.234
+    13363 2013-08-01  Saint Petersburg  Russia      17.153
+    13364 2013-09-01  Saint Petersburg  Russia         NaN
+    
+    [330 rows x 4 columns]
+                           date country  avg_temp_c
+    city                                           
+    Moscow           2000-01-01  Russia      -7.313
+    Moscow           2000-02-01  Russia      -3.551
+    Moscow           2000-03-01  Russia      -1.661
+    Moscow           2000-04-01  Russia      10.096
+    Moscow           2000-05-01  Russia      10.357
+    ...                     ...     ...         ...
+    Saint Petersburg 2013-05-01  Russia      12.355
+    Saint Petersburg 2013-06-01  Russia      17.185
+    Saint Petersburg 2013-07-01  Russia      17.234
+    Saint Petersburg 2013-08-01  Russia      17.153
+    Saint Petersburg 2013-09-01  Russia         NaN
+    
+    [330 rows x 3 columns]
