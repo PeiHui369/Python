@@ -2,3 +2,36 @@
 <Inner Join>
 newName = table1.merge(table2, on="", suffixes = ('_table1', '_table2'))
 - on: overlap on what
+
+<One-to-many Relationships>
+# Group the results by title then count the number of accounts
+counted_df = licenses_owners.groupby("title").agg({'account':'count'})
+- count/median
+- groupby(['col1','col2'])
+
+# Sort the counted_df in desending order
+sorted_df = counted_df.sort_values(by="account",ascending=False)
+- sort_values(['col1','col2'], ascending=(True,False))
+
+<Merging multiple DataFrame>
+newName = table1.merge(table2, on=['column1', 'column2'])
+
+newName = table1.merge(table2, on='')\
+           .merge(table3, on='')
+           
+>>Filter criteria
+filter = ((newName['col'] == 'value') &
+          (newName['col2'] == 'value2'))
+         
+ >>
+newName.loc[filter, 'column'].sum()
+
+<Left Join>
+newName = table1.merge(table2, on="", suffixes = ('_table1', '_table2'), how='left')
+
+# Count the number of rows in TABLE with a null value in the COL column.
+number_of_missing_fin = TABLE['COL'].isnull().sum()
+
+
+
+
