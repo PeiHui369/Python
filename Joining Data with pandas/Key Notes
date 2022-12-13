@@ -32,6 +32,14 @@ newName = table1.merge(table2, on="", suffixes = ('_table1', '_table2'), how='le
 # Count the number of rows in TABLE with a null value in the COL column.
 number_of_missing_fin = TABLE['COL'].isnull().sum()
 
+/*
+A left join will return all of the rows from the left table. 
+If those rows in the left table match multiple rows in the right table, then all of those rows will be returned. 
+Therefore, the returned rows must be equal to if not greater than the left table.
+*/
+
+<Right Join>
+newName = table1.merge(table2, how="right", left_on="", right_on="")
 
 
 
