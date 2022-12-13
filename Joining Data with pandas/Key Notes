@@ -1,0 +1,4 @@
+
+<Inner Join>
+newName = table1.merge(table2, on="", suffixes = ('_table1', '_table2'))
+- on: overlap on what
