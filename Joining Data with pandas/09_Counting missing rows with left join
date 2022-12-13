@@ -1,0 +1,74 @@
+Counting missing rows with left join
+The Movie Database is supported by volunteers going out into the world, collecting data, and entering it into the database. This includes financial data, such as movie budget and revenue. If you wanted to know which movies are still missing data, you could use a left join to identify them. Practice using a left join by merging the movies table and the financials table.
+
+The movies and financials tables have been loaded for you.
+
+---
+What column is likely the best column to merge the two tables on?
+In [1]:
+movies
+Out[1]:
+
+         id                 title  popularity release_date
+0       257          Oliver Twist      20.416   2005-09-23
+1     14290  Better Luck Tomorrow       3.877   2002-01-12
+2     38365             Grown Ups      38.864   2010-06-24
+3      9672              Infamous       3.681   2006-11-16
+4     12819       Alpha and Omega      12.301   2010-09-17
+...     ...                   ...         ...          ...
+4798   3089             Red River       5.345   1948-08-26
+4799  11934   The Hudsucker Proxy      14.189   1994-03-11
+4800  13807                Exiled       8.486   2006-09-06
+4801  73873          Albert Nobbs       7.802   2011-12-21
+4802  11622   Blast from the Past       8.737   1999-02-12
+
+[4803 rows x 4 columns]
+In [2]:
+financials
+Out[2]:
+
+          id     budget    revenue
+0      19995  237000000  2.788e+09
+1        285  300000000  9.610e+08
+2     206647  245000000  8.807e+08
+3      49026  250000000  1.085e+09
+4      49529  260000000  2.841e+08
+...      ...        ...        ...
+3224    2292      27000  3.151e+06
+3225     692      12000  6.000e+06
+3226   36095      20000  9.900e+04
+3227   14337       7000  4.248e+05
+3228    9367     220000  2.041e+06
+
+[3229 rows x 3 columns]
+
+>> on = "id"
+
+---
+Merge the movies table, as the left table, with the financials table using a left join, and save the result to movies_financials.
+===
+# Merge movies and financials with a left join
+movies_financials = movies.merge(financials, on='id', how='left')
+
+>>
+
+<script.py> output:
+    budget    3229
+    Name: budget, dtype: int64
+
+---
+Count the number of rows in movies_financials with a null value in the budget column.
+===
+# Merge the movies table with the financials table with a left join
+movies_financials = movies.merge(financials, on='id', how='left')
+
+# Count the number of rows in the budget column that are missing
+number_of_missing_fin = movies_financials['budget'].isnull().sum()
+
+# Print the number of movies missing financials
+print(number_of_missing_fin)
+
+>>
+
+<script.py> output:
+    1574
