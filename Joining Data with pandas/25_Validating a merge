@@ -1,0 +1,19 @@
+Validating a merge
+You have been given 2 tables, artists, and albums. Use the IPython shell to merge them using artists.merge(albums, on='artid').head(). Adjust the validate argument to answer which statement is False.
+
+artists.merge(albums, on='artid').head()
+Out[1]:
+
+   artid       name  aid                                  title
+0      1      AC/DC    1  For Those About To Rock We Salute You
+1      1      AC/DC    4                      Let There Be Rock
+2      2     Accept    2                      Balls to the Wall
+3      2     Accept    3                      Restless and Wild
+4      3  Aerosmith    5                               Big Ones
+
+- You can use 'many_to_many' without an error, since there is a duplicate key in one of the tables.
+- You can use 'one_to_many' without error, since there is a duplicate key in the right table.
+
+You can use 'many_to_one' without an error, since there is a duplicate key in the left table. //This statement is false. 
+There is a duplicate value in the artid column in the albums table, which is the right table in this merge. 
+Therefore, setting validate equal to 'many_to_one' or 'one_to_one' will raise an error, making this statement false.
