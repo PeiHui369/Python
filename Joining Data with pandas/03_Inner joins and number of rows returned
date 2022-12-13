@@ -50,3 +50,33 @@ However, in steps 2 and 3, using the altered tables with the altered first row o
 There was not a matching value in the ward column of the other table. 
 Remember that .merge() only returns rows where the values match in both tables.
 */
+
+<script.py> output:
+    wards_census table shape: (50, 9)
+
+<script.py> output:
+      ward
+    0   61
+    1    2
+    2    3
+    3    4
+    4    5
+    wards_altered_census table shape: (49, 9)
+
+<script.py> output:
+       ward
+    0  None
+    1     2
+    2     3
+    3     4
+    4     5
+    wards_census_altered table shape: (49, 9)
+
+<script.py> output:
+       ward
+    0  None
+    1     2
+    2     3
+    3     4
+    4     5
+    wards_census_altered table shape: (49, 9)
