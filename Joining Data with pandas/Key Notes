@@ -41,5 +41,17 @@ Therefore, the returned rows must be equal to if not greater than the left table
 <Right Join>
 newName = table1.merge(table2, how="right", left_on="", right_on="")
 
+<Merging on Indexes>
+name = pd.read_csv('fileName.csv', index_col= ['colNameToBeIndex'])
+
+<Select column>
+[[]]
+
+<Filtering Join>
+# Use .isin() to subset non_mus_tcks to rows with tid in tracks_invoices
+top_tracks = non_mus_tcks[non_mus_tcks['tid'].isin(tracks_invoices['tid'])]
+
+# Group the top_tracks by gid and count the tid rows
+cnt_by_gid = top_tracks.groupby(['gid'], as_index=False).agg({'tid':'count'})
 
 
